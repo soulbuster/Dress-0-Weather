@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>hey</title>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+  const successCallBack = (Position) => {
+    console.log(position);
+  };
+  const errorCallBack = (error) => {
+    console.error(error);
+  };
+  navigator.geolocation.getCurrentPosition(successCallBack,errorCallBack);
+</script>
+
+</html>

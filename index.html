@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dress~0~Weather</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quattrocento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="text-align: center">
+  <section id="title">
+    <nav class="navbar sticky-top navbar-expand-lg" style="background-color: #e3f2fd">
+      <a class="navbar-brand" style="font-size: 1.5rem;font-family: 'Quattrocento', serif">Dress~0~Weather</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" >
+            <a class="nav-link" method="post" href="/signup">Developer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+
+  <section id="bodyMain">
+    <div class="row">
+      <div class="col-lg-6" style="padding:7% 2% 1% 14%">
+        <h1 style="font-family: 'Quattrocento', serif">Dress~0~Weather</h1>
+        <p style="font-family: 'Nunito', sans-serif;line-height: 1.5;">Don't bother to think which dress to wear according to weather conditions? well let me decide your dress which will suit you best!</p>
+        <form class="" action="/userGPS" method="post">
+          <label style="font-family: 'Nunito', sans-serif;">Let me catch you?</label>
+          <button class="btn btn-outline-success" type="submit" name="button">Go!</button>
+        </form>
+        <form class="" action="/userInput" method="post" style="padding-top:4%">
+          <label style="font-family: 'Nunito', sans-serif;" for="cityName">Enter city name: </label>
+          <input id="cityName" type="text" name="cityName">
+          <button class="btn btn-outline-success" type="submit" name="button">Take me!</button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <img src="https://media.giphy.com/media/yD20aDGNcpoq2fkYTf/giphy.gif" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <p>
+      <a href="https://www.linkedin.com/in/prakash-jha-97aa161b0/">LinkedIn</a>
+      © Copyright 2021 GeezRick
+   </p>
+  </section>
+</body>
+</html>
