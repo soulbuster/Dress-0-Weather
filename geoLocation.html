@@ -3,20 +3,45 @@
 
 <head>
   <meta charset="utf-8">
-  <title>hey</title>
+  <title>GPS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 
 <body>
+  <div class="jumbotron">
+    <h1 class="display-4">We got your location!</h1>
+    <p class="lead"><form class="" action="/autoLocation" method="post">
+      <input type="text" id="latitude" name="latitude" placeholder="latitude">
+      <input type="text" id="longitude" name="longitude" placeholder="longitude">
+      <hr class="my-4">
+      <button class="btn btn-success" type="submit" name="button">Proceed</button>
+    </p>
+  </div>
 </body>
 
 <script type="text/javascript">
   const successCallBack = (Position) => {
-    console.log(Position);
+    const latitude = Position.coords.latitude;
+    const longitude = Position.coords.longitude;
+     document.getElementById('latitude').defaultValue = latitude;
+     document.getElementById('longitude').defaultValue = longitude;
+    // console.log(latitude);
+    // const data = {
+    //   latitude,longitude
+    // };
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(data)
+    // };
+    // fetch('/userGPS', options);
   };
   const errorCallBack = (error) => {
     console.error(error);
   };
-  navigator.geolocation.getCurrentPosition(successCallBack,errorCallBack);
+  navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
 </script>
 
 </html>
