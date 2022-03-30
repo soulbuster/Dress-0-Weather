@@ -1,0 +1,115 @@
+/**
+ * Content locker
+ * @param {string} hash
+ * @constructor
+ */
+function Locker (hash) {
+  this.hash = hash
+  this.api = 'https://invtrk.com/'
+  // this.api = 'http://localhost:9800/t/'
+}
+
+Locker.prototype.unlock = function (action) {
+  switch (action.method) {
+    case 'Redirect':
+      window.location.assign(action.data)
+      break
+    case 'JavaScript Eval':
+      eval(action.data)
+      break
+    case 'Close':
+      break;
+  }
+}
+
+/**
+ * Keep visitor live
+ */
+Locker.prototype.live = function () {
+  var self = this
+  $.get(this.api + 's/' + this.trackingId, function (res) {
+    if (res.method) {
+      clearInterval(self.liveInterval)
+      self.unlock(res)
+    }
+  }, 'json')
+}
+
+/**
+ * Start tracking
+ */
+Locker.prototype.startTracking = function () {
+  var self = this
+  $.post(this.api + 'l/' + this.hash, { "referrer": window.location.href}, function (res) {
+    if (res.tracking) {
+      self.trackingId = res.tracking
+      self.offers = res.campaigns.slice(0,2)
+      var toRandom = res.campaigns.slice(2)
+      self.offers.push(toRandom[Math.floor(Math.random() * toRandom.length)])
+      console.log(self.offers)
+      
+      $.each(self.offers, function(key, offer) {
+        $('#offers-table').append('<a class="offerLink" href="' + self.api + 'c/' + offer.tracking + '" target="_blank">' + offer.title + '</a><br>')
+      })
+      $('.offerLink').click(function() {
+        $('#offers-table').fadeOut('slow',function() {
+          $('#step3').fadeIn()
+        })
+      })
+      $('#goBack').click(function() {
+        $('#step3').fadeOut('slow',function() {
+          $('#offers-table').fadeIn()
+        })
+      })
+      self.liveInterval = setInterval(function() { self.live() }, 60000)
+    }
+  }, 'json')
+}
+
+/**
+ *
+ */
+$(document).ready(function () {
+  var hash = window.config.hash
+  var locker = new Locker(hash)
+  locker.startTracking()
+
+  $('.download-button').click(function() {
+    $('#step-1, .file-detail').fadeOut('slow', function() {
+
+      $('#step-2').fadeIn('slow', function() {
+
+      })
+    })
+  })
+
+  // $.fn.select2.defaults.set('theme', 'classic')
+  var $lang = $("select#lang")
+  $lang.select2({
+    templateResult: formatLang,
+    templateSelection: formatLang
+  })
+  $lang.on('select2:select', function (e) {
+    setLang(e.params.data.id)
+    window.location.reload(true)
+  })
+  $lang.val(window.config.lang)
+  $lang.trigger('change')
+})
+
+function setLang(lang) {
+  document.cookie = 'lang=' + lang
+}
+
+function formatLang(lang) {
+  var baseUrl = '/assets/lang/'
+
+  if (!lang.id) {
+    return lang.text
+  }
+  var $state = $(
+    '<span><img src="' + baseUrl + lang.element.value.toLowerCase() + '.png?nc" class="img-flag"> ' + lang.text + '</span>'
+  )
+
+  return $state
+}

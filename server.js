@@ -34,6 +34,7 @@ app.post("/", function(req, res) {
     lastName: lastName,
     email: email1
   };
+  console.log(email1+" "+firstName+" "+lastName);
   async function run() {
     const response = await mailchimp.lists.addListMember(listId, {
       email_address: subscribingUser.email,
@@ -46,7 +47,9 @@ app.post("/", function(req, res) {
     res.sendFile(__dirname+"/success.html");
     //res.send("yay! you made it!");
   }
-  run().catch(e => res.sendFile(__dirname+"/failure.html"));
+  run().catch(function(e){
+    res.sendFile(__dirname+"/failure.html")
+  });
 });
 
 app.post("/success",function(req,res){
@@ -75,13 +78,13 @@ app.post("/userInput", function(req, res) {
       if(temprature<=0){
         res.write("<p><img width= 40% height= 80% src=images/menLessThanZero.jpg><img width= 60% height= 80% src=images/womenLessThanZero.jpg></p>");
       }else if(temprature>0&&temprature<=10){
-        res.write("<p><img width= 30% height= 80% src=images/mengreaterthan0.jpg><img src=images/womengreaterthan0.jpg></p>");
+        res.write("<p><img width= 50% height= 90% src=images/mengreaterthan0.jpg><img width= 30% height= 90% src=images/womengreaterthan0.jpg></p>");
       }else if(temprature>10&&temprature<=20){
         res.write("<p><img width= 70% height= 90% src=images/mengreaterthan10.jpg><img width= 30% height= 90% src=images/womengreaterthan10.jpg></p>");
       }else if(temprature>20&&temprature<=30 && description=="Clouds"){
         res.write("<p><img width= 70% height= 80% src=images/mengreaterthan20c.jpg><img width= 30% height= 80% src=images/womengreaterthan20.jpg></p>");
       }else if(temprature>20&&temprature<=30 && description=="Clear"){
-        res.write("<p><img width= 30% height= 80% src=images/mengreaterthan20.jpg><img src=images/greaterthan20.jpg></p>");
+        res.write("<p><img width= 30% height= 80% src=images/mengreaterthan20.jpg><img width= 70% height= 80% src=images/greaterthan20.jpg></p>");
       }else if(temprature>20&&temprature<=30 && description=="Haze" || description=="Smoke"){
         res.write("<p><img width= 30% height= 90% src=images/mengreaterthan20H.jpg><img width= 70% height= 90% src=images/womengreaterthan20H.jpg></p>");
       }else{
@@ -122,7 +125,7 @@ app.post("/autoLocation",function(req,res){
       }else if(temprature>20&&temprature<=30 && description=="Clouds"){
         res.write("<p><img width= 70% height= 80% src=images/mengreaterthan20c.jpg><img width= 30% height= 80% src=images/womengreaterthan20.jpg></p>");
       }else if(temprature>20&&temprature<=30 && description=="Clear"){
-        res.write("<p><img width= 30% height= 80% src=images/mengreaterthan20.jpg><img src=images/greaterthan20.jpg></p>");
+        res.write("<p><img width= 30% height= 80% src=images/mengreaterthan20.jpg><img width= 70% height= 80% src=images/greaterthan20.jpg></p>");
       }else if(temprature>20&&temprature<=30 && description=="Haze" || description=="Smoke"){
         res.write("<p><img width= 30% height= 90% src=images/mengreaterthan20H.jpg><img width= 70% height= 90% src=images/womengreaterthan20H.jpg></p>");
       }else{
@@ -134,6 +137,6 @@ app.post("/autoLocation",function(req,res){
   });
 });
 
-app.listen(process.env.PORT||3003, function(req, res) {
+app.listen(3000, function(req, res) {
   console.log("Server Started.");
 });

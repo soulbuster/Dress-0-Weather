@@ -1,0 +1,219 @@
+body {
+    font-family: Lato, Verdana, sans-serif;
+    color: #2e2e2e;
+    font-size: 13px;
+    background: url(../images/background-left.png) no-repeat left top, url(../images/background-right.png) no-repeat right top;
+  }
+  section .container.shadowed {
+    background: rgba(0, 0, 0, 0.05);
+    background: -moz-radial-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 0%, rgba(45, 45, 45, 0) 70%, rgba(237, 237, 237, 0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(70%, rgba(45, 45, 45, 0)), color-stop(100%, rgba(237, 237, 237, 0)));
+    background: -webkit-radial-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 0%, rgba(45, 45, 45, 0) 70%, rgba(237, 237, 237, 0) 100%);
+    background: -o-radial-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 0%, rgba(45, 45, 45, 0) 70%, rgba(237, 237, 237, 0) 100%);
+    background: -ms-radial-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 0%, rgba(45, 45, 45, 0) 70%, rgba(237, 237, 237, 0) 100%);
+    background: radial-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 0%, rgba(45, 45, 45, 0) 70%, rgba(237, 237, 237, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ededed', GradientType=0);
+  }
+  section .title {
+    font-size: 2.538em;
+    font-weight: 300;
+  }
+  section .title strong {
+    font-weight: 800;
+  }
+  section .content {
+    line-height: 2.538em;
+  }
+  #header {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #header #header-overlay {
+    background: rgba(0, 173, 239, 0.95);
+  }
+  #header #top-bar {
+    background: url(../images/top-bar-left.png) no-repeat top left, url(../images/top-bar-right.png) no-repeat top right;
+    margin: auto;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 134px;
+    font-size: 1.077em;
+  }
+  #header #top-bar span {
+    color: #539209;
+    font-weight: 800;
+  }
+  #header #angle {
+    font-size: 1.077em;
+    color: #ffffff;
+  }
+  #header #angle ul {
+    list-style-type: none;
+    margin-top: 25px;
+  }
+  #header #angle ul li {
+    display: inline;
+    margin-left: 5%;
+    padding: 4px 10px 4px 20px;
+    background: no-repeat 5px 8px url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAAXNSR0IB2cksfwAAADNQTFRFAAAA////////////////////////////////////////////////////////////////t5XiggAAABF0Uk5TAFbU+VTfQQY/PgIDPVVX1voeYRCzAAAAPElEQVR4nGNgwAcYmZiZGKFsFlY2dg5WKI+JE0hwMkE4zFxAgpsZKsMDJHigMrxgPXxQE/j4BfhhbGIAAEiBAP++/H0qAAAAAElFTkSuQmCC');
+  }
+  #header #angle ul li:last-child {
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+  }
+  #download-info #title span {
+    display: inline;
+    background: #ffffff;
+    color: #0fb4f0;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 1.923em;
+  }
+  #download-info .file-detail {
+    color: #ffffff;
+    font-size: 1.154em;
+    line-height: 1.3em;
+  }
+  #download-info .file-detail span {
+    font-size: 1.615em;
+    font-weight: 800;
+  }
+  #download-info #step-1 .download-button {
+    margin-top: 50px;
+    background: url(../images/dl-icon.png) left bottom no-repeat #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    padding: 19px 20px 19px 109px;
+    color: #1ab6f1;
+    font-weight: bold;
+    font-size: 1.385em;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  #download-info #step-1 .download-button small {
+    width: 100%;
+    display: inline-block;
+    font-size: 0.55em;
+    text-transform: uppercase;
+  }
+  #download-info #step-1 .download-button:hover {
+    background: url(../images/dl-icon-white.png) left bottom no-repeat transparent;
+    color: #ffffff;
+  }
+  #download-info #step-2 {
+    display: none;
+    padding: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #download-info #step-2 .offer-header {
+    color: #ffffff;
+    font-size: 1.6em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  #download-info #step-2 .offer-header span {
+    display: inline;
+    background: #ffffff;
+    color: #0fb4f0;
+    font-weight: bold;
+    padding: 2px;
+  }
+  #download-info #step-2 #offers-table a {
+    display: inline-block;
+    color: #ffffff;
+    margin: 5px 0;
+    font-size: 1.4em;
+    transition: all 0.5s ease;
+    padding: 2px;
+  }
+  #download-info #step-2 #offers-table a:hover {
+    text-decoration: none;
+    background: #ffffff;
+    color: #0fb4f0;
+  }
+  #cover img {
+    padding-bottom: 20px;
+  }
+  #feedback {
+    background: url(../images/fb-icon.png) no-repeat center left;
+  }
+  #feedback .messenger-icon {
+    background: url(../images/messenger-icon.png) no-repeat right center;
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  #feedback .messenger-icon .title {
+    line-height: 1;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+  }
+  #feedback #fb-comments {
+    font-family: Helvetica, Arial, sans-serif;
+    background: url(../images/lines-comments.png) top right no-repeat, url(../images/comments-line-left.png) bottom left no-repeat;
+    padding-bottom: 50px;
+    padding-top: 40px;
+  }
+  #feedback #fb-comments #real-fb {
+    overflow: hidden;
+  }
+  #feedback #fb-comments #real-fb .no-fb-stats {
+    position: absolute;
+    font-weight: bold;
+    padding: 10px;
+    background: #ffffff;
+    width: 100%;
+    z-index: 999;
+  }
+  #feedback #fb-comments #comments-list {
+    font-size: 14px;
+    line-height: 1.358;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+  #feedback #fb-comments #comments-list .comment {
+    margin-top: 20px;
+  }
+  #feedback #fb-comments #comments-list .comment .name {
+    color: #365899;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  #feedback #fb-comments #comments-list .comment .work {
+    color: #90949c;
+    font-weight: normal;
+    padding-left: 10px;
+  }
+  #feedback #fb-comments #comments-list .comment .actions {
+    color: #4267b2;
+    font-size: 12px;
+    line-height: 1.358;
+  }
+  #feedback #fb-comments #comments-list .comment .actions .like {
+    color: #1d2129;
+  }
+  #feedback #fb-comments #comments-list .comment .actions .time {
+    color: #90949c;
+  }
+  #how-to-download .content {
+    font-size: 1.4em;
+  }
+  #features .headline {
+    font-size: 1.462em;
+    line-height: 1em;
+  }
+  footer {
+    margin-top: 30px;
+    background: url(../images/footer.jpg) center left no-repeat, url(../images/footer-bg-right.png) right bottom no-repeat;
+    min-height: 200px;
+  }
+  footer .container {
+    padding-top: 90px;
+    text-align: right;
+  }
+  
